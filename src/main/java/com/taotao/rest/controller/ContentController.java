@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.taotao.common.utils.ExceptionUtil;
 import com.taotao.common.utils.TaotaoResult;
 import com.taotao.pojo.TbContent;
 import com.taotao.rest.service.ContentService;
-
+/**
+ * 内容管理
+ * @author dong
+ *
+ */
 @Controller
 @RequestMapping("/content")
 public class ContentController {
@@ -25,7 +30,8 @@ public class ContentController {
 			List<TbContent> list = contentService.getContentList(contentCategoryId);
 			return TaotaoResult.ok(list);
 		} catch (Exception e) {
-			return TaotaoResult.build(500, e.getMessage());
+			e.printStackTrace();
+			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
 		}
 	}
 }

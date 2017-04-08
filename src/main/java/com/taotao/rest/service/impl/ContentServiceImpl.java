@@ -10,7 +10,11 @@ import com.taotao.pojo.TbContent;
 import com.taotao.pojo.TbContentExample;
 import com.taotao.pojo.TbContentExample.Criteria;
 import com.taotao.rest.service.ContentService;
-
+/**
+ * 内容管理
+ * @author dong
+ *
+ */
 @Service
 public class ContentServiceImpl implements ContentService {
 	@Autowired
